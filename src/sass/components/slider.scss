@@ -1,16 +1,13 @@
 @import "../utils/animations";
 @import "../functions";
 
-$slide-height: rem(300px);
+$slide-height: rem(500px);
 
 .slider {
   background-color: lightblue;
+  position: relative;
 
-  &__slides {
-  }
 
-  &__nav {
-  }
 }
 
 .slides {
@@ -23,7 +20,7 @@ $slide-height: rem(300px);
     min-height: $slide-height;
     position: absolute;
     background-color: lightcoral;
-    //animation-duration: 10s;
+    animation-duration: 10s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     background-size: cover;
@@ -64,13 +61,37 @@ $slide-height: rem(300px);
     right: rem(20px);
     top: 50%;
     transform: translateY(-50%);
+    font-family: "Roboto Black", sans-serif;
   }
 }
 
 .nav {
-  &__btn {
-    &.nav__btn--prev {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: rem(20px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 40px);
 
+  &__btn {
+    background-image: url("#{$img-path}/arrow.svg");
+    background-repeat: no-repeat;
+    width: rem(46px);
+    height: rem(46px);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -999px;
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+      transition: opacity 40ms ease-in-out;
+    }
+
+    &.nav__btn--prev {
+      transform: rotate(180deg);
     }
   }
 }

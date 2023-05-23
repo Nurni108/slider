@@ -385,17 +385,20 @@ html, body {
 }
 .slider {
   background-color: lightblue;
+  position: relative;
 }
+
 .slides {
   position: relative;
   overflow: hidden;
-  min-height: 18.75rem;
+  min-height: 31.25rem;
 }
 .slides__slide {
   width: 100%;
-  min-height: 18.75rem;
+  min-height: 31.25rem;
   position: absolute;
   background-color: lightcoral;
+  animation-duration: 10s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   background-size: cover;
@@ -440,6 +443,36 @@ html, body {
   right: 1.25rem;
   top: 50%;
   transform: translateY(-50%);
+  font-family: "Roboto Black", sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 1.25rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 40px);
+}
+.nav__btn {
+  background-image: url("../images/arrow.svg");
+  background-repeat: no-repeat;
+  width: 2.875rem;
+  height: 2.875rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: -999px;
+  opacity: 0.5;
+}
+.nav__btn:hover {
+  opacity: 1;
+  transition: opacity 40ms ease-in-out;
+}
+.nav__btn.nav__btn--prev {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=app.css.map */

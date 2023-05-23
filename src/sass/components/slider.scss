@@ -3,9 +3,6 @@
 
 $slide-height: rem(300px);
 
-
-
-
 .slider {
   background-color: lightblue;
 
@@ -29,33 +26,36 @@ $slide-height: rem(300px);
     animation-duration: 10s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-
-    &:first-child {
-      animation-name: slide-1;
-      left: 0;
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-name: slide-#{$i};
+        background-image: url("#{$img-path}/slide-#{$i}.jpeg");
+        left: ($i - 1) * 100%;
+      }
     }
-    &:nth-child(2) {
-      background-color: lightgoldenrodyellow;
-      animation-name: slide-2;
-      left: 100%;
+
+
+    &__box {
     }
-    &:last-child {
-      background-color: lightgreen;
-      animation-name: slide-3;
-      left: 200%
+
+    &__hdl {
+    }
+
+    &__lead {
+    }
+
+    &__link {
     }
   }
-  &__box {}
-  &__hdl {}
-  &__lead {}
-  &__link {}
-}
 
-.nav {
-  &__btn {
-    &.nav__btn--prev {
+  .nav {
+    &__btn {
+      &.nav__btn--prev {
 
+      }
     }
   }
 }
